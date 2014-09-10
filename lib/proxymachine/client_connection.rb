@@ -88,7 +88,7 @@ class ProxyMachine
       @connected = true
       @buffer.each { |data| @server_side.send_data(data) }
       @buffer = []
-      proxy_incoming_to(@server_side, 10240)
+      proxy_incoming_to(@server_side, 1024000)
     end
 
     # Called by the server side when a connection could not be established,
